@@ -1,0 +1,87 @@
+.myCourses {
+    .course_content {
+        margin-top: 20px;
+        .intro_courses {
+            // display: flex;
+            // align-items: center;
+            // flex-direction: column;
+            // text-align: center;
+            h1 {
+                @include text($color-black-0, $fs-2, $fw-bold);
+            }
+
+            p {
+                @include text($color-black-0, $fs-1, $fw-normal);
+            }
+        }
+
+        .myTab {
+            .nav-tabs  {
+                // border-bottom: none;
+                justify-content: space-between;
+                .nav-item {
+                    .nav-link {
+                        border: none;
+                        @include text($color-black-0, $fs-0, $fw-normal);
+                        &:hover {
+                            color: $color-blue;
+                        }
+                    }
+
+                    .nav-link.active {
+                        border-bottom: solid 4px $color-blue;
+                    }
+                }
+            }
+
+            .tab-content {
+                .item_courses {
+                  
+                    .card {
+
+                        .card-title {
+                            display: -webkit-box;;
+                            @include text($color-black-0, $fs-1, $fw-bold);
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                        };
+
+                        .card-text {
+                            @include text($color-black-light, $fs-1, $fw-normal);
+                            margin-bottom: 10px;
+                        }
+
+                        .item_content {
+                            .price {
+                                text-align: right;
+                                .price_old {
+                                    margin-right: 10px;
+                                    @include text($color-gray-3, $fs-1, $fw-normal);
+                                    text-decoration: line-through;
+                                }
+
+                                .price_new {
+                                    @include text($color-black-0, $fs-0, $fw-bold);
+                                }
+                            }
+
+                            .ratings {
+                                @include text($color-gray-3, $fs-1, $fw-normal);
+
+                                .active {
+                                    color: $color-yellow;
+                                }
+                            }
+                        }
+                
+                        img {
+                            height: 200px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

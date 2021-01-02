@@ -1,0 +1,15 @@
+.btn-white {
+    @include button($fs-1, $color-gray-1, $color-gray-4, $fw-0, $color-white-0, $color-black-0);
+    border: 1px solid $color-black-light;
+    transition: all 0.5s;
+    &:hover {
+        border: 1px solid $color-black-0;
+    }
+}
+
+.btn-red {
+    @include button($fs-1, $color-red-0, $color-white-0, $fw-0, $color-red-3, $color-white-0);
+    
+    transition: all 0.5s;
+
+}

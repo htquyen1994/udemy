@@ -1,0 +1,59 @@
+.myCover {
+    background: url("../imgs/cover.jpg");
+    position: relative;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    .conver_content {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 10%;
+        width: 40%;
+
+        h1 {
+            @include text($color-white-0, $fs-4, $fw-bold);
+        }
+
+        p {
+            @include text($color-white-0, $fs-2 - 2, $fw-normal);
+        }
+
+        .input {
+            .form-control {
+                padding: $pd-3;
+                border-radius: 0;
+                border: none !important;
+                // box-shadow: none;
+                transition: none;
+                // background-clip: padding-box;
+                &::placeholder {
+                    @include text($color-gray-2, $fs-2 - 2, $fw-normal);
+                }
+
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+
+            .input-group-prepend {
+                .input-group-text {
+                    background-color: $color-white-0;
+                    color: $color-red-0;
+                    border: none;
+                    padding: $pd-1;
+                }
+
+                &:hover {
+                    .input-group-text {
+                        background-color:  $color-red-0;
+                        color: $color-white-0;
+                    }
+                }
+            }
+            
+        }
+
+    }
+}

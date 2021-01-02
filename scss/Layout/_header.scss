@@ -1,0 +1,112 @@
+.myNavBar {
+    border-bottom: 1px solid $color-gray-1;
+    position: fixed;
+    width: 100%;
+    z-index: 88;
+    background-color: $color-white-0;
+    transition: all 0.5s;
+
+    &.headerClass {
+        border-bottom: 1px solid $color-blue;
+    }
+
+    .navbar-brand {
+        flex-grow: 1;
+        img {
+            width: 110px;
+        }
+    }
+
+    .categories {
+        flex-grow: 1;
+        align-self: center;
+        @include text($color-black-light, $fs-1, $fw-normal)
+    }
+
+    .input-search {
+        flex-grow: 5;
+
+        .form-control {
+            background-color: $color-gray-1;
+            border: none;
+            transition: none;
+            &:focus {
+                box-shadow: none;
+                border-bottom: 1px solid $color-gray-3;
+                border-top: 1px solid $color-gray-3;
+                border-left: 1px solid $color-gray-3;
+                background-color: $color-white-0;
+            };
+
+            &:focus + .input-group-prepend {
+                .input-group-text {
+                    border-bottom: 1px solid $color-gray-3;
+                    border-top: 1px solid $color-gray-3;
+                    border-right: 1px solid $color-gray-3;
+                    background-color: $color-white-0;
+    
+                }
+
+                &:hover {
+                    .input-group-text {
+                        background-color: $color-red-0;
+                        color: $color-white-0;
+                    }
+                }
+            }
+        }
+        .input-group-prepend {
+            .input-group-text {
+                background-color: $color-gray-1;
+                border: none;
+                color: $color-red-0;
+
+            }
+            &:hover {
+                .input-group-text {
+                    background-color: $color-red-0;
+                    color: $color-white-0;
+                }
+            }
+            
+        }
+    }
+
+    .navbar-nav {
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+
+        .nav-item {
+            .nav-link {
+                @include text($color-black-light, $fs-1, $fw-normal);
+                padding: $pd-1 $pd-2;
+            }
+            
+            &:hover {
+                background-color: $color-gray-1;
+            }
+        }
+        
+        .nav-item:nth-child(3) {
+            border-radius: 50%;
+            &:hover {
+                border: 1px solid $color-gray-1;
+            }
+        }
+    }
+
+    @include response-to('extra-large') {
+        .navbar-nav {
+            .business, .contructors {
+                display: none;
+            }
+        }
+    }
+
+    @include response-to('medium') {
+        .categories, .input-search {
+            display: none;
+        }
+    }
+}

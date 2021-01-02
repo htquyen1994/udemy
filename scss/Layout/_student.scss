@@ -1,0 +1,51 @@
+.myStudents {
+    margin-top: 20px;
+    .student_content {
+        width: 80%;
+        margin: auto;
+
+        .card {
+
+            .card-title {
+                display: -webkit-box;;
+                @include text($color-black-0, $fs-1, $fw-bold);
+                text-overflow: ellipsis;
+                overflow: hidden;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            };
+
+            .card-text {
+                @include text($color-black-light, $fs-1, $fw-normal);
+                margin-bottom: 10px;
+            }
+
+            .item_content {
+                .price {
+                    text-align: right;
+                    .price_old {
+                        margin-right: 10px;
+                        @include text($color-gray-3, $fs-1, $fw-normal);
+                        text-decoration: line-through;
+                    }
+
+                    .price_new {
+                        @include text($color-black-0, $fs-0, $fw-bold);
+                    }
+                }
+
+                .ratings {
+                    @include text($color-gray-3, $fs-1, $fw-normal);
+
+                    .active {
+                        color: $color-yellow;
+                    }
+                }
+            }
+    
+            img {
+                height: 200px;
+            }
+        }
+    }
+}
